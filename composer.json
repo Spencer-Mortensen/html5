@@ -6,7 +6,7 @@
         "HTML"
     ],
     "homepage": "https://github.com/spencer-mortensen/html5",
-    "license": "LGPL-3.0",
+    "license": "LGPL-3.0-or-later",
     "authors": [
         {
             "name": "Spencer Mortensen",
