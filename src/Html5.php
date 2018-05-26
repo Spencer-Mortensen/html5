@@ -29,11 +29,11 @@ class Html5
 {
 	public static function getElementHtml($name, array $attributes = null, $innerHtml = null)
 	{
-		$attributesHtml = self::getAttributesHtml($attributes);
+		$attributesHtml = self::getAttributesHtml($name, $attributes);
 		return "<{$name}{$attributesHtml}>{$innerHtml}</{$name}>";
 	}
 
-	private static function getAttributesHtml($attributes)
+	private static function getAttributesHtml($name, array $attributes = null)
 	{
 		if (count($attributes) === 0) {
 			return '';
@@ -61,5 +61,10 @@ class Html5
 	private static function attributeEncode($attribute)
 	{
 		return htmlspecialchars($attribute, ENT_HTML5 | ENT_COMPAT | ENT_DISALLOWED | ENT_COMPAT, 'UTF-8');
+	}
+
+	public static function urlEncode($url)
+	{
+		return rawurlencode($url);
 	}
 }
