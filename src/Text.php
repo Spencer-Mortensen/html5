@@ -37,10 +37,6 @@ class Text implements Node
 
 	public function __toString()
 	{
-		$text = htmlspecialchars($this->text, ENT_HTML5 | ENT_DISALLOWED | ENT_NOQUOTES, 'UTF-8');
-		$text = str_replace("\t", '    ', $text);
-		$text = str_replace(' ', '&nbsp;', $text);
-
-		return $text;
+		return htmlspecialchars($this->text, ENT_HTML5 | ENT_DISALLOWED | ENT_NOQUOTES, 'UTF-8');
 	}
 }
